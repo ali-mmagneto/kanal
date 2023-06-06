@@ -20,7 +20,7 @@ async def filmg(bot, message):
         son_id = int(msj[3])
         sayi = await message.reply_text(f"{kanal_id} {id} {son_id}")
         msg = await message.reply_text("`Filmleri Kopyalıyorum Bekle`")
-        for mid in range(id - 1,son_id):
+        for mid in range(id,son_id):
             bugun = datetime.now(tz).strftime("%T")
             if int(bugun.split(":")[0]) >= 20 or int(bugun.split(":")[0]) < 8:
                 uyu = 30
