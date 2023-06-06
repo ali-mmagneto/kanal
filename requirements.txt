@@ -1,0 +1,7 @@
+pyrogram
+TgCrypto
+asyncio
+unidecode
+ffmpeg-python
+hachoir
+pillow
