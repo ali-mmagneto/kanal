@@ -30,10 +30,7 @@ async def filmg(bot, message):
                 cop = await bot.get_messages(kanal_id, mid)
             except FloodWait as e:
                 await asyncio.sleep(e.value)
-                try:
-                    cop = await bot.get_messages(kanal_id, mid)
-                except Exception as e:
-                    print(e)
+                cop = await bot.get_messages(kanal_id, mid)
             if not cop:
                 continue
             else:
@@ -45,6 +42,10 @@ async def filmg(bot, message):
                     await asyncio.sleep(uyu)
                 except FloodWait as f:
                     await asyncio.sleep(f.value)
+                    await bot.copy_message(
+                        chat_id=DEPO,
+                        from_chat_id=kanal_id,
+                        message_id=mid)
         await msg.edit("İŞLEM TAMAM!!!")
     except Exception as e:
         await message.reply_text(e)
